@@ -13,13 +13,14 @@ use Illuminate\Http\Request;
 |
 */
 
+$router->group(['prefix' => 'v1', 'middleware' => 'auth'], function () use ($router) {
+	$router->get('/element', 'ElementController');
+});
+
+// Public Routes
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('/', function () use ($router) {
         return "API is working.";
     });
-
-    $router->group(['middleware' => 'auth'], function () use ($router) {
-        $router->get('/element', 'ElementController');
-    });
+	$router->get('/mail', 'ElementController@index');
 });
-
