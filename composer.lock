@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "87c578a5a41c1cb927ffa408e510b65f",
+    "content-hash": "656cde4860ad2ed2b587f746fe0ab4ef",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -3615,6 +3615,80 @@
             "time": "2018-07-29T20:33:41+00:00"
         },
         {
+            "name": "wildbit/laravel-postmark-provider",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wildbit/laravel-postmark-provider.git",
+                "reference": "b80815602f618abe24030ea6d3f117da49a72885"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wildbit/laravel-postmark-provider/zipball/b80815602f618abe24030ea6d3f117da49a72885",
+                "reference": "b80815602f618abe24030ea6d3f117da49a72885",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/mail": "~5.2",
+                "wildbit/swiftmailer-postmark": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Postmark\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "An officially supported mail provider to send mail from Laravel through Postmark, see instructions for integrating it here: https://github.com/wildbit/laravel-postmark-provider/blob/master/README.md",
+            "time": "2016-02-10T14:15:58+00:00"
+        },
+        {
+            "name": "wildbit/swiftmailer-postmark",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wildbit/swiftmailer-postmark.git",
+                "reference": "fb49114bc8033b125f9d19473dc0741385131d84"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wildbit/swiftmailer-postmark/zipball/fb49114bc8033b125f9d19473dc0741385131d84",
+                "reference": "fb49114bc8033b125f9d19473dc0741385131d84",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "swiftmailer/swiftmailer": ">=4.1.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.5"
+            },
+            "suggest": {
+                "wildbit/laravel-postmark-provider": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Postmark\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Postmark",
+                    "email": "support@postmarkapp.com"
+                }
+            ],
+            "description": "A Swiftmailer Transport for Postmark.",
+            "time": "2017-04-18T14:24:10+00:00"
+        },
+        {
             "name": "zendframework/zend-diactoros",
             "version": "1.8.6",
             "source": {
@@ -3680,6 +3754,74 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "coconutcraig/laravel-postmark",
+            "version": "v2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/coconutcraig/laravel-postmark.git",
+                "reference": "89513ca613463daf416f367cffb4a4360b780fe7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/coconutcraig/laravel-postmark/zipball/89513ca613463daf416f367cffb4a4360b780fe7",
+                "reference": "89513ca613463daf416f367cffb4a4360b780fe7",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "illuminate/mail": "~5.5.0|~5.6.0|~5.7.0",
+                "illuminate/support": "~5.5.0|~5.6.0|~5.7.0",
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.5.0|~3.6.0|~3.7.0",
+                "phpunit/phpunit": "~6.0|~7.0",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "suggest": {
+                "mvdnbrk/postmark-inbound": "Allows you to process Postmark Inbound Webhooks."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Coconuts\\Mail\\PostmarkServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Coconuts\\Mail\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Craig Paul",
+                    "email": "craig.paul@coconutcalendar.com",
+                    "homepage": "https://coconutcalendar.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel package for sending mail via the Postmark API",
+            "homepage": "https://github.com/coconutcraig/laravel-postmark",
+            "keywords": [
+                "coconutcraig",
+                "email",
+                "laravel",
+                "mail",
+                "postmark",
+                "wildbit"
+            ],
+            "time": "2018-09-11T13:17:45+00:00"
+        },
         {
             "name": "doctrine/instantiator",
             "version": "1.1.0",

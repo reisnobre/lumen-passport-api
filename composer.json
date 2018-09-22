@@ -10,7 +10,9 @@
         "vlucas/phpdotenv": "~2.2",
         "dusterio/lumen-passport": "^0.2.4",
         "illuminate/mail": "5.5",
-        "illuminate/redis": "5.5"
+        "illuminate/redis": "5.5",
+        "wildbit/laravel-postmark-provider": "^3.0",
+        "laravel/passport": "~4.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
