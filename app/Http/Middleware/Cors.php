@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Middleware;
+
 use Closure;
+
 class Cors
 {
     /**
@@ -12,16 +14,26 @@ class Cors
      */
     public function handle($request, Closure $next)
     {
-        $domains = ['http://localhost:8080', 'http://localhost:8081'];
-        if (isset($request->server()['HTTP_ORIGIN'])) {
-            $origin = $request->server()['HTTP_ORIGIN'];
-            if (in_array($origin, $domains)) {
-                header('Access-Control-Allow-Origin: ' . $origin);
-                header('Access-Control-Allow-Headers: Origin, Content-Type, Authorization, Source');
-                header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept, X-Socket-ID, X-HTTP-Method-Override');
-                header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-            }
+        $headers = [
+            'Access-Control-Allow-Origin'      => '*',
+            'Access-Control-Allow-Methods'     => 'POST, GET, OPTIONS, PUT, DELETE',
+            'Access-Control-Allow-Credentials' => 'true',
+            'Access-Control-Max-Age'           => '86400',
+            'Access-Control-Allow-Headers'     => 'Content-Type, Authorization, X-Requested-With'
+        ];
+
+        if ($request->isMethod('OPTIONS'))
+        {
+            return response()->json('{"method":"OPTIONS"}', 200, $headers);
         }
-        return $next($request);
+
+        $response = $next($request);
+        foreach($headers as $key => $value)
+        {
+            $response->header($key, $value);
+        }
+
+        return $response;
     }
 }
+

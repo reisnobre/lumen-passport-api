@@ -1,1 +1,1 @@
-{% raw %}<strong>You won {{ $winnings }}</strong>!{% endraw %}
+<strong>You won {{ $winnings }}</strong>!

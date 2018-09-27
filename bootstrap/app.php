@@ -106,5 +106,6 @@ $app->register(Dusterio\LumenPassport\PassportServiceProvider::class);
 
 // Load config/auth.php
 $app->configure('auth');
+// $app->configure('mail');
 
 return $app;

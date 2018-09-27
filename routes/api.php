@@ -22,5 +22,5 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('/', function () use ($router) {
         return "API is working.";
     });
-	$router->get('/mail', 'ElementController@index');
+	$router->post('/contact', 'ContactsController@store');
 });
